@@ -5,6 +5,11 @@
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  
   font: 16px "Helvetica Neue", Arial, sans-serif;
-  color: #121214;
+  color: #e1e1e6;
+
+  background: #121214;
 }
