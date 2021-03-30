@@ -38,8 +38,23 @@ export async function saveSubscription(
           { data: subscriptionData }
         )
       )
+    } else {
+      await fauna.query(
+        q.Replace(
+          q.Select(
+            "ref",
+            q.Get(
+              q.Match(
+                q.Index('subscription_by_id'),
+                subscriptionId,
+              )
+            )
+          ),
+          { data: subscriptionData }
+        )
+      )
     }
   } catch (err) {
-    console.log("Erro fauna", err)
+    console.log("Database error ", err)
   }
 }

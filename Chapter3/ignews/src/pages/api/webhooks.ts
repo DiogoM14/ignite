@@ -58,15 +58,14 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
             await saveSubscription(
               subscription.id,
-              subscription.customer.toString()
+              subscription.customer.toString(),
+              false
             )
 
-            
             break
             
             case 'checkout.session.completed':
               const checkoutSession = event.data.object as Stripe.Checkout.Session
-              console.log("TIPOO", type)
 
             await saveSubscription(
               checkoutSession.subscription.toString(),
