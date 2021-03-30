@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "prismic-dom": "^2.2.5"
+  },
+  "devDependencies": {
+    "@types/prismic-dom": "^2.1.1"
+  }
+}
