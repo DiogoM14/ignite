@@ -61,10 +61,12 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
               subscription.customer.toString()
             )
 
+            
             break
-
-          case 'checkout.session.completed':
-            const checkoutSession = event.data.object as Stripe.Checkout.Session
+            
+            case 'checkout.session.completed':
+              const checkoutSession = event.data.object as Stripe.Checkout.Session
+              console.log("TIPOO", type)
 
             await saveSubscription(
               checkoutSession.subscription.toString(),
