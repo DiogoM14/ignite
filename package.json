@@ -1,6 +1,0 @@
-{
-  "devDependencies": {
-    "@types/faker": "^5.5.7",
-    "faker": "^5.5.3"
-  }
-}
