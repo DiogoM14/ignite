@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 import { theme } from '../styles/theme'
 
@@ -22,6 +23,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </SidebarDrawerProvider>
       </ChakraProvider>
+      
+      <ReactQueryDevtools />
     </QueryClientProvider>
   )
 }
