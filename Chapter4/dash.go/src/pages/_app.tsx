@@ -8,12 +8,11 @@ import { makeServer } from '../services/mirage'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ChakraProvider } from '@chakra-ui/react'
 import { SidebarDrawerProvider } from '../contexts/SidebarDrawerContex'
+import { queryClient } from '../services/QueryClient'
 
 if (process.env.NODE_ENV === 'development') {
   makeServer()
 }
-
-const queryClient = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
