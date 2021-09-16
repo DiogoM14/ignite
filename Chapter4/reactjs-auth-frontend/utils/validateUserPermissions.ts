@@ -22,7 +22,7 @@ export function validateUserPermissions({ user, permissions, roles }: ValidateUs
 
   if(roles?.length > 0) {
     const hasAllRoles = roles.some(role => {
-      return user.permissions.includes(role)
+      return user.roles.includes(role)
     })
 
     if (!hasAllRoles) {
