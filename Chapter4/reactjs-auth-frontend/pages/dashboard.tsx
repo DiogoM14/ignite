@@ -8,7 +8,7 @@ import { setupAPIClient } from "../services/api"
 import { api } from "../services/apiClient"
 
 export default function Dashboard() {
-  const { user } = useContext(AuthContext)
+  const { user, signOut } = useContext(AuthContext)
 
   useEffect(() => {
     api.get('/me')
@@ -19,6 +19,8 @@ export default function Dashboard() {
   return (
     <>
       <h1>Dashboard { user?.email }</h1>
+
+      <button onClick={signOut}>Sign out</button>
 
       <Can permissions={['metrics.list']}>
         <div>Métricas</div>
